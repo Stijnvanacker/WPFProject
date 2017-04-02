@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="WPFProject.Views.AdminArticleAddView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPFProject.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="1000">
+    <Grid HorizontalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+        <TextBlock FontSize="27" Text="Toevoegen Artikels"></TextBlock>
+
+        <StackPanel Grid.Row="2" >
+            <TextBlock FontSize="20" Text="Artikelnaam" Margin="3"></TextBlock>
+            <TextBox FontSize="20" Text="{Binding CurrentArticle.Name}" Margin="3"></TextBox>
+            <TextBlock  FontSize="20" Text="Prijs" Margin="3"></TextBlock>
+            <TextBox  FontSize="20" Text="{Binding CurrentArticle.Price}"  ></TextBox>
+            <TextBlock  FontSize="20"  Text="MenuIndexX" Margin="3"></TextBlock>
+            <TextBox  FontSize="20"  Text="{Binding CurrentArticle.MenuIndexX}"  ></TextBox>
+            <TextBlock FontSize="20"  Text="MenuIndexY" Margin="3"></TextBlock>
+            <TextBox FontSize="20"  Text="{Binding CurrentArticle.MenuIndexY}"  ></TextBox>
+
+
+
+            <Button Content="Toevoegen" FontSize="20"  Margin="0,20,0,0"  Command="{Binding AddArticleCommand}" CommandParameter="{Binding CurrentArticle}"></Button>
+            <Button Content="Terug" FontSize="20" Margin="0,20,0,0"  Command="{Binding TerugCommand}"></Button>
+        </StackPanel>
+    </Grid>
+
+    <UserControl.Background>
+        <RadialGradientBrush GradientOrigin="0.5,0.5">
+            <GradientStop Color="White" Offset="0"></GradientStop>
+            <GradientStop Color="LightSteelBlue" Offset="1"></GradientStop>
+        </RadialGradientBrush>
+    </UserControl.Background>
+</UserControl>
